@@ -26,5 +26,17 @@
 				"initrd=/install/initrd.gz -- <enter>"
 				]
 		}
+	],
+	"provisioners": 
+	[
+		{
+			"type": "shell",
+			"scripts": ["upgrade.sh", "vmware.sh", "vagrant.sh"]
+		}
+	],
+	"post-processors": [
+		{
+			"type": "vagrant"
+		}
 	]
 }
