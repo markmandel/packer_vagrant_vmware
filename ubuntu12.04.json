@@ -2,7 +2,7 @@
 	"builders":
 	[
 		{
-			"type": "vmware",
+			"type": "vmware-iso",
 			"iso_url": "file:///home/mark/Downloads/os/ubuntu-12.04.3-server-amd64.iso",
 			"iso_checksum": "2cbe868812a871242cdcdd8f2fd6feb9",
 			"iso_checksum_type": "md5",
@@ -31,7 +31,12 @@
 	[
 		{
 			"type": "shell",
-			"scripts": ["upgrade.sh", "vmware.sh", "vagrant.sh"]
+			"script": "upgrade.sh"
+		}, 
+		{
+			"type": "shell",
+			"scripts": ["vmware.sh", "vagrant.sh"],
+			"pause_before": "30s"
 		}
 	],
 	"post-processors": [
